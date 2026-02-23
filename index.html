@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script type="text/javascript" src="pesquisa.js"></script>
+</head>
+<body>
+    <div class="titulo">
+        <img src="imagens/International_Pokémon_logo.svg.png" alt="Pokémon">
+    </div>
+    
+    <div class="container"> 
+        <div class="nome">BULBASAUR</div>
+        <div id="index">1</div>
+        <div class="foto">
+            <img id ="imagem"src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="">
+        </div>
+            <ul class="tipos">
+                <li id="tipo1" style="background-color: #7AC74C">GRASS</li>
+                <li id="tipo2" style="background-color: #A33EA1;">POISON</li>
+            </ul>
+    </div>
+        
+    <form class="pesquisa">
+        <input type="text" placeholder="Número do Pokémon" id='num'>
+        <input type="submit" value="Pesquisar" onclick="mostrarPokemon(event)">
+    </form>
+    
+</body>
+</html>
