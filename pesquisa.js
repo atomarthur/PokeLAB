@@ -19,11 +19,13 @@ const coresTipos = {
     FAIRY: "#D685AD"
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarPokemon(1, new Event('submit'));
+});
 
-async function mostrarPokemon(event){
-    event.preventDefault()
-
-    let numero = document.getElementById('num').value
+async function mostrarPokemon(numero, event)
+{
+    event.preventDefault();
 
     let url = `https://pokeapi.co/api/v2/pokemon/${numero}`
     
@@ -31,12 +33,16 @@ async function mostrarPokemon(event){
 
     let dados = await resposta.json()
 
+    atualizarStatus(dados.stats)
+
     document.querySelector(".nome").textContent = dados.name.toUpperCase()
     document.getElementById("imagem").src = dados.sprites.front_default;
     document.getElementById("imagem").alt = dados.name;
+    document.getElementById("height").textContent = (dados.height)/10 + " m";
+    document.getElementById("weight").textContent = (dados.weight)/10 + " kg";
 
     let respostaSpecies = await fetch(dados.species.url);
-    let species = await respostaSpecies.json();
+    let species = await respostaSpecies.json(); 
     let numeroPokedex = species.pokedex_numbers.find(p => p.pokedex.name === "national")?.entry_number || dados.id
 
     document.getElementById("index").textContent = numeroPokedex
@@ -61,4 +67,24 @@ async function mostrarPokemon(event){
 
 
 }
+
+function atualizarStatus(stats)
+{
+
+    const MAX_STAT = 150;
+
+    stats.forEach(stat => {
+
+        const name_stat = stat.stat.name;
+        const value_stat = stat.base_stat;
+
+        const stat_bar = document.getElementById(name_stat);
+
+        const percentage =
+            Math.min((value_stat / MAX_STAT) * 100, 100);
+
+        stat_bar.style.width = percentage + "%";
+    });
+}
+
 

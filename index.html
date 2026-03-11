@@ -8,26 +8,101 @@
     <script type="text/javascript" src="pesquisa.js"></script>
 </head>
 <body>
+
     <div class="titulo">
         <img src="imagens/International_Pokémon_logo.svg.png" alt="Pokémon">
     </div>
     
-    <div class="container"> 
+    <div class="container">
+
+    <div class="lado-esquerdo">
+
         <div class="nome">BULBASAUR</div>
-        <div id="index">1</div>
+
         <div class="foto">
-            <img id ="imagem"src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="">
+            <img id="imagem"
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
         </div>
-            <ul class="tipos">
-                <li id="tipo1" style="background-color: #7AC74C">GRASS</li>
-                <li id="tipo2" style="background-color: #A33EA1;">POISON</li>
-            </ul>
+
+        <ul class="tipos">
+            <li id="tipo1">GRASS</li>
+            <li id="tipo2">POISON</li>
+        </ul>
     </div>
+
+
+    <div class="lado-direito">
+
+        <div class="numero-container">
+            <div id="index">1</div>
+        </div>
+
+        <div class="info">
+            <div class="medida">
+                <span class="label">HEIGHT</span>
+                <span id="height">0.7 m</span>
+            </div>
+
+            <div class="medida">
+                <span class="label">WEIGHT</span>
+                <span id="weight">6.9 kg</span>
+            </div>
+        </div>
+
+        <!--
+        
+        <div class="habilidades">
+            <h3>Habilidades</h3>
+            <ul id="listaHabilidades">
+                <li>Overgrow</li>
+                <li>Chlorophyll</li>
+            </ul>
+        </div>
+        
+        -->  
+
+        <div class="status">
+
+            <div class="stat">
+                <span>HP</span>
+                <div class="barra"><div id="hp"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>ATK</span>
+                <div class="barra"><div id="attack"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>DEF</span>
+                <div class="barra"><div id="defense"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>SPA</span>
+                <div class="barra"><div id="special-attack"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>SPD</span>
+                <div class="barra"><div id="special-defense"></div></div>
+            </div>
+
+            <div class="stat">
+                <span>SPE</span>
+                <div class="barra"><div id="speed"></div></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
         
     <form class="pesquisa">
         <input type="text" placeholder="Número do Pokémon" id='num'>
-        <input type="submit" value="Pesquisar" onclick="mostrarPokemon(event)">
+        <input type="submit" value="Pesquisar" onclick="mostrarPokemon(document.getElementById('num').value, event)">
     </form>
-    
+
 </body>
 </html>
