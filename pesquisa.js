@@ -19,7 +19,8 @@ const coresTipos = {
     FAIRY: "#D685AD"
 };
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => 
+{
     mostrarPokemon(1, new Event('submit'));
 });
 
@@ -58,14 +59,15 @@ async function mostrarPokemon(numero, event)
 
     tipo1Elemento.style.backgroundColor = coresTipos[tipos[0]];
 
-    if (!tipos[1]) {
+    if (!tipos[1]) 
+    {
         document.getElementById("tipo2").style.display = "none";
-    } else {
+    } 
+    else 
+    {
         document.getElementById("tipo2").style.display = "list-item";
         tipo2Elemento.style.backgroundColor = coresTipos[tipos[1]];
     }
-
-
 }
 
 function atualizarStatus(stats)
@@ -79,11 +81,30 @@ function atualizarStatus(stats)
         const value_stat = stat.base_stat;
 
         const stat_bar = document.getElementById(name_stat);
+        const percentage = Math.min((value_stat / MAX_STAT) * 100, 100);
 
-        const percentage =
-            Math.min((value_stat / MAX_STAT) * 100, 100);
+        if (percentage < 24)
+        {
+            stat_bar.style.background = "linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(255, 92, 92, 1) 90%)";
+        }
+
+        else if (percentage < 43)
+        {
+            stat_bar.style.background = "linear-gradient(90deg,rgba(255, 221, 0, 1) 0%, rgba(255, 250, 99, 1) 90%)";
+        }
+
+        else if (percentage < 68)
+        {
+            stat_bar.style.background = "linear-gradient(90deg,rgba(0, 255, 72, 1) 0%, rgba(140, 255, 180, 1) 90%)";
+        }
+
+        else
+        {
+            stat_bar.style.background = "linear-gradient(90deg,rgb(130, 240, 255) 0%, rgba(0, 180, 255, 1) 90%)";
+        }
 
         stat_bar.style.width = percentage + "%";
+
     });
 }
 
