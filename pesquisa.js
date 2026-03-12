@@ -1,4 +1,4 @@
-Document.querySelector(".pesquisa").addEventListener("submit", (event) =>
+document.querySelector(".pesquisa").addEventListener("submit", (event) =>
 {
     event.preventDefault();
     const numero = document.getElementById("num").value;
