@@ -1,33 +1,20 @@
-const coresTipos = {
-    NORMAL: "#A8A77A",
-    FIRE: "#EE8130",
-    WATER: "#6390F0",
-    ELECTRIC: "#F7D02C",
-    GRASS: "#7AC74C",
-    ICE: "#96D9D6",
-    FIGHTING: "#C22E28",
-    POISON: "#A33EA1",
-    GROUND: "#E2BF65",
-    FLYING: "#A98FF3",
-    PSYCHIC: "#F95587",
-    BUG: "#A6B91A",
-    ROCK: "#B6A136",
-    GHOST: "#735797",
-    DRAGON: "#6F35FC",
-    DARK: "#705746",
-    STEEL: "#B7B7CE",
-    FAIRY: "#D685AD"
-};
+Document.querySelector(".pesquisa").addEventListener("submit", (event)) =>
+{
+    event.preventDefault();
+    const numero = document.getElementById("num").value;
+    mostrarPokemon(numero);
+}
+
 
 document.addEventListener("DOMContentLoaded", () => 
 {
-    mostrarPokemon(1, new Event('submit'));
+    mostrarPokemon(1);
 });
 
-async function mostrarPokemon(numero, event)
-{
-    event.preventDefault();
+// Functions
 
+async function mostrarPokemon(numero)
+{
     let url = `https://pokeapi.co/api/v2/pokemon/${numero}`
     
     let resposta = await fetch(url)
@@ -72,7 +59,6 @@ async function mostrarPokemon(numero, event)
 
 function atualizarStatus(stats)
 {
-
     const MAX_STAT = 150;
 
     stats.forEach(stat => {
@@ -107,5 +93,28 @@ function atualizarStatus(stats)
 
     });
 }
+
+// Type colours struct
+
+const coresTipos = {
+    NORMAL: "#A8A77A",
+    FIRE: "#EE8130",
+    WATER: "#6390F0",
+    ELECTRIC: "#F7D02C",
+    GRASS: "#7AC74C",
+    ICE: "#96D9D6",
+    FIGHTING: "#C22E28",
+    POISON: "#A33EA1",
+    GROUND: "#E2BF65",
+    FLYING: "#A98FF3",
+    PSYCHIC: "#F95587",
+    BUG: "#A6B91A",
+    ROCK: "#B6A136",
+    GHOST: "#735797",
+    DRAGON: "#6F35FC",
+    DARK: "#705746",
+    STEEL: "#B7B7CE",
+    FAIRY: "#D685AD"
+};
 
 
