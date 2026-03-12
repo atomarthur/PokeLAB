@@ -1,9 +1,9 @@
-Document.querySelector(".pesquisa").addEventListener("submit", (event)) =>
+Document.querySelector(".pesquisa").addEventListener("submit", (event) =>
 {
     event.preventDefault();
     const numero = document.getElementById("num").value;
     mostrarPokemon(numero);
-}
+});
 
 
 document.addEventListener("DOMContentLoaded", () => 
