@@ -23,7 +23,7 @@ async function mostrarPokemon(numero)
     atualizarStatus(dados.stats)
 
     document.querySelector(".nome").textContent = dados.name.toUpperCase()
-    document.getElementById("imagem").src = dados.sprites.front_default;
+    document.getElementById("imagem").src = dados.sprites.other["official-artwork"].front_default;
     document.getElementById("imagem").alt = dados.name;
     document.getElementById("height").textContent = (dados.height)/10 + " m";
     document.getElementById("weight").textContent = (dados.weight)/10 + " kg";
