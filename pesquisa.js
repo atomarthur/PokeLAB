@@ -70,22 +70,22 @@ function atualizarStatus(stats)
 
         if (percentage < 24)
         {
-            stat_bar.style.background = "linear-gradient(90deg,rgba(255, 0, 0, 1) 0%, rgba(255, 92, 92, 1) 90%)";
+            stat_bar.style.background = "linear-gradient(90deg, rgba(255, 92, 92, 1) 0%, rgba(255, 0, 0, 1) 90%)";
         }
 
         else if (percentage < 43)
         {
-            stat_bar.style.background = "linear-gradient(90deg,rgba(255, 221, 0, 1) 0%, rgba(255, 250, 99, 1) 90%)";
+            stat_bar.style.background = "linear-gradient(90deg, rgba(255, 250, 99, 1) 0%, rgba(255, 221, 0, 1) 90%)";
         }
 
         else if (percentage < 68)
         {
-            stat_bar.style.background = "linear-gradient(90deg,rgba(0, 255, 72, 1) 0%, rgba(140, 255, 180, 1) 90%)";
+            stat_bar.style.background = "linear-gradient(90deg, rgba(140, 255, 180, 1) 0%, rgba(0, 255, 72, 1) 90%)";
         }
 
         else
         {
-            stat_bar.style.background = "linear-gradient(90deg,rgb(130, 240, 255) 0%, rgba(0, 180, 255, 1) 90%)";
+            stat_bar.style.background = "linear-gradient(90deg, rgba(130, 240, 255, 1) 0%, rgba(0, 180, 255, 1) 90%)";
         }
 
         stat_bar.style.width = percentage + "%";
